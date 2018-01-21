@@ -2,14 +2,12 @@ package com.leus.shapes;
 
 import com.leus.ColorsOfShapes;
 
-import java.text.DecimalFormat;
-
 public abstract class Shape {
 
     private ColorsOfShapes color;
 
-    String name;
-    DecimalFormat dFormat = new DecimalFormat("#.0");
+    protected String name;
+    protected double area;
 
     public Shape(ColorsOfShapes color) {
         this.color = color;
@@ -19,7 +17,11 @@ public abstract class Shape {
         return color;
     }
 
-    public abstract double getArea();
+    public double getArea() {
+        return area;
+    }
 
     public abstract void draw();
+
+    protected abstract double calculationArea();
 }

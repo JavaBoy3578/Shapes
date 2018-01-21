@@ -19,11 +19,7 @@ public class Triangle extends Shape {
         this.firstCathetus = Math.floor(firstCathetus * 10) / 10;
         this.secondCathetus = Math.floor(secondCathetus * 10) / 10;
         this.hypotenuse = calculationHypotenuse();
-    }
-
-    @Override
-    public double getArea() {
-        return Math.floor((firstCathetus * secondCathetus) / 2 * 10) / 10;
+        area = calculationArea();
     }
 
     public double getHypotenuse() {
@@ -39,5 +35,10 @@ public class Triangle extends Shape {
         double squareHypotenuse = Math.floor(Math.pow(firstCathetus, 2) * 10) / 10 + Math.floor(Math.pow(secondCathetus, 2) * 10) / 10;
 
         return Math.floor(Math.sqrt(squareHypotenuse) * 10) / 10;
+    }
+
+    @Override
+    protected double calculationArea() {
+        return Math.floor((firstCathetus * secondCathetus) / 2 * 10) / 10;
     }
 }

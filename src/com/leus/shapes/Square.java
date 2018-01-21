@@ -14,11 +14,7 @@ public class Square extends Shape {
 
         name = "квадрат";
         this.side = Math.floor(side * 10) / 10;
-    }
-
-    @Override
-    public double getArea() {
-        return Math.floor(Math.pow(side, 2) * 10) / 10;
+        area = calculationArea();
     }
 
     public double getSide() {
@@ -28,5 +24,10 @@ public class Square extends Shape {
     @Override
     public void draw() {
         System.out.println("Фигура: " + name + ", площадь: " + getArea() + " кв. ед., длина стороны: " + getSide() + " ед., цвет: " + getColor().getColorAsString());
+    }
+
+    @Override
+    protected double calculationArea() {
+        return Math.floor(Math.pow(side, 2) * 10) / 10;
     }
 }
